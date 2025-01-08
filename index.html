@@ -52,6 +52,9 @@
             color: #fff;
             text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
         }
+        h3 {
+            font-size: 32px;
+        }
         .hero p {
             font-size: 1.5em;
             font-weight: 300;
@@ -134,6 +137,19 @@
             color: #2575fc;
             transform: scale(1.2);
         }
+        .video-frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .video-frame iframe {
+            width: 80%;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
 <body>
@@ -149,6 +165,8 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#music">Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sports">Sports</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -195,21 +213,72 @@
     <div id="projects" class="section bg-dark">
         <div class="container">
             <h2>Projects</h2>
-            <div class="project">
-                <h3>Multiplayer Poker Game</h3>
-                <p>Developed a real-time multiplayer poker game using Python, Flask, and Flask-Socket. Tested in Vietnam with 30 students, the game features intuitive gameplay, secure user authentication, and real-time communication.</p>
-                <p><strong>Technologies:</strong> Python, Flask, Flask-Socket</p>
+
+            <!-- Internship Experience -->
+            <div class="text-center">
+                <h3><strong>Internship at Symper</strong>r</h3>
+                <p>Symper is a technological company that develops a low-code business management platform for companies.</p>
+                <p>The projects below are my contribution to the platform.</p>
+                <p>More information on the company can be found here: <a href="https://symper.vn/">Symper</a></p>
             </div>
+            <br>
+            <br>
+            <!-- Project 1 -->
             <div class="project">
                 <h3>Indexing Time Optimization</h3>
-                <p>Ongoing project focused on improving query performance using advanced indexing strategies. Currently achieving a 10% runtime reduction with tools like sql-metadata, ClickHouse, and Kafka.</p>
+                <video width="640" height="320" controls>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+                <p>Ongoing project focused on improving query performance using a bot to suggest which columns should be indexed.</p>
+                <p>The video above shows how it works: a document (in the form of a table) is chosen and the service returns its suggestions in groups.</p>
+                <p>In the Symper platform, a service called SYQL will return every SQL query that is ran by any client.</p>
+                <p>These queries is transferred to the service using Kafka.</p>
+                <p>The server analyses the query, ask ChatGPT to see which column of the table called in the query should be indexed.</p>
+                <p>It then returns different combinations of which columns should be indexed (can be single or composite index).</p>
+                <p>In the future, I want to create a seperate bot that is specifically for suggesting indexes.</p>
+                <p>The code can be found here: <a href="https://github.com/leminhductran/doc_indexing">GitHub</a></p>
                 <p><strong>Technologies:</strong> Python, sql-metadata, ClickHouse, Kafka</p>
             </div>
+            <br>
+            <br>
+            <!-- Project 2 -->
             <div class="project">
                 <h3>AI Model Development</h3>
-                <p>Created a service with machine learning models for clients' needs with 85% accuracy. The service is integrated into the platform with usage of 4 clients.</p>
+                <video width="640" height="320" controls>
+                    <source src="video1.webm" type="video/mp4">
+                </video>
+                <p>Created a service with machine learning models for clients' needs with 85% accuracy along with 2 other interns.</p>
+                <p>The service receives data from the "Load" node, including the ID of the model that should be trained and the data set.</p>
+                <p>The right side are the seclection for target columns, index columns and parameters.</p>
+                <p>The service trains models and store them in a folder. These models can be called later for predicting.</p>
+                <p>The service is integrated into the platform for Symper's clients usage.</p>
+                <p>The code can be found here: <a href="https://github.com/MitNguyenn/Symper">GitHub</a></p>
                 <p><strong>Technologies:</strong> Python, Flask, Pandas, Scikit-learn</p>
             </div>
+        </div>
+    </div>
+    
+
+    <!-- Music Section -->
+    <div id="music" class="section">
+        <div class="container">
+            <h2>Music</h2>
+            <p class="text-center">Music has always been a passion of mine. Here is a video showcasing some of my favorite moments:</p>
+            <div class="video-frame">
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sports Section -->
+    <div id="sports" class="section bg-dark">
+        <div class="container">
+            <h2>Sports</h2>
+            <p class="text-center">I enjoy staying active and participating in various sports, including badminton and jogging.</p>
+            <p class="text-center">I also do train on my own by going to the gym and jogging.
         </div>
     </div>
 
@@ -217,10 +286,10 @@
     <div id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
-            <p class="text-center">Feel free to reach out to discuss opportunities, collaborations, or just to connect.</p>
+            <p class="text-center">Feel free to reach out.</p>
             <div class="contact-icons">
-                <a href="mailto:yourname@example.com" title="Email"><i class="bi bi-envelope"></i></a>
-                <a href="https://github.com/yourusername" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="mailto:tranleminhduc@live.com" title="Email"><i class="bi bi-envelope"></i></a>
+                <a href="https://github.com/leminhductran" title="GitHub"><i class="bi bi-github"></i></a>
             </div>
         </div>
     </div>
